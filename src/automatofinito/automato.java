@@ -7,6 +7,11 @@ package automatofinito;
 
 import java.awt.event.ItemEvent;
 import javax.swing.JOptionPane;
+import automatofinito.AlternativaJ;
+import automatofinito.AlternativaD;
+import automatofinito.AlternativaE;
+import automatofinito.AlternativaF;
+import automatofinito.AlternativaC;
 
 /**
  *
@@ -142,96 +147,89 @@ public class automato extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         if (jExercicio.getSelectedItem().equals("Exercício A")) {
-
-            String ent = jEntrada.getText();
-            int tam = ent.length();
-
-            if (ent.charAt(0) == 'a' && ent.charAt(tam - 1) == 'b') {
+            AlternativaA exA = new AlternativaA();
+            boolean ret = exA.testarSentenca(jEntrada.getText());
+            if (ret) {
                 JOptionPane.showMessageDialog(null, "Sequencia reconhecida!");
-                
-
             } else {
                 JOptionPane.showMessageDialog(null, "Sequencia não reconhecida!");
-                
             }
         } else if (jExercicio.getSelectedItem().equals("Exercício B")) {
-            String ent = jEntrada.getText();
-            int tam = ent.length();
-            int cont = 0;
-            int existe = 0;
-            for (int i = 0; i < tam; i++) {
-                if (ent.charAt(i) == 'a') {
-                    cont++;
-                    if (cont == 3) {
-                        existe = 1;
-                        break;
-                    }
-                } else {
-                    cont = 0;
-                }
-            }
-            System.out.println("Cont: " + cont);
-            if (existe == 1) {
+            AlternativaB exB = new AlternativaB();
+            boolean ret = exB.testarSentenca(jEntrada.getText());
+            if (ret) {
                 JOptionPane.showMessageDialog(null, "Sequencia reconhecida!");
             } else {
                 JOptionPane.showMessageDialog(null, "Sequencia não reconhecida!");
             }
-        } else if (jExercicio.getSelectedItem().equals("Exercício I")) {
-            String ent = jEntrada.getText();
-            char f = ent.charAt(0);
-            int first = (int) f;
+        } else if (jExercicio.getSelectedItem().equals("Exercício C")) {
+            AlternativaC exC = new AlternativaC();
+            boolean ret = exC.testarSentenca(jEntrada.getText());
+            if (ret) {
+                JOptionPane.showMessageDialog(null, "Sequencia reconhecida!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Sequencia não reconhecida!");
+            }
 
-            if ((first >= 65 && first <= 90) || (first >= 97 && first <= 122)) {
+        } else if (jExercicio.getSelectedItem().equals("Exercício D")) {
+            AlternativaD exD = new AlternativaD();
+            boolean ret = exD.testarSentenca(jEntrada.getText());
+            if (ret) {
+                JOptionPane.showMessageDialog(null, "Sequencia reconhecida!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Sequencia não reconhecida!");
+            }
+        } else if (jExercicio.getSelectedItem().equals("Exercício E")) {
+            AlternativaE exE = new AlternativaE();
+            boolean ret = exE.testarSentenca(jEntrada.getText());
+            if (ret) {
+                JOptionPane.showMessageDialog(null, "Sequencia reconhecida!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Sequencia não reconhecida!");
+            }
+        } else if (jExercicio.getSelectedItem().equals("Exercício F")) {
+            AlternativaF exF = new AlternativaF();
+            boolean ret = exF.testarSentenca(jEntrada.getText());
+            if (ret) {
                 JOptionPane.showMessageDialog(null, "Sequencia reconhecida!");
             } else {
                 JOptionPane.showMessageDialog(null, "Sequencia não reconhecida!");
             }
         } else if (jExercicio.getSelectedItem().equals("Exercício G")) {
-            String ent = jEntrada.getText();
-            int tam = ent.length();
-            int cA = 0;
-            int cB = 0;
-            int exA = 0;
-            int exB = 0;
-
-            for (int i = 0; i < tam; i++) {
-                if (ent.charAt(0) == 'a') {
-                    exA = 1;
-                    if (ent.charAt(i) == 'a') {
-                        cA++;
-                    }
-                } else if (ent.charAt(0) == 'b') {
-                    exB = 1;
-                    if (ent.charAt(i) == 'b') {
-                        cB++;
-                    }
-                }
-            }
-            if (cA % 2 == 0 && exA == 1) {
-                JOptionPane.showMessageDialog(null, "Sequencia reconhecida!");
-            } else if (cB % 2 != 0 && exB == 1) {
+            AlternativaG exG = new AlternativaG();
+            boolean ret = exG.testarSentenca(jEntrada.getText());
+            if (ret) {
                 JOptionPane.showMessageDialog(null, "Sequencia reconhecida!");
             } else {
                 JOptionPane.showMessageDialog(null, "Sequencia não reconhecida!");
             }
+
         } else if (jExercicio.getSelectedItem().equals("Exercício H")) {
-            String ent = jEntrada.getText();
-            int tam = ent.length();
-            int soma = 0;
-            for (int i = 0; i < tam; i++) {
-                char v = ent.charAt(i);
-                soma += Character.getNumericValue(v);
-            }
-            if(ent.charAt(0) == '0' && soma%2 == 0){
-                
+            AlternativaH exH = new AlternativaH();
+            boolean ret = exH.testarSentenca(jEntrada.getText());
+            if (ret) {
                 JOptionPane.showMessageDialog(null, "Sequencia reconhecida!");
-            }else if(ent.charAt(0) == '1' && soma%2 != 0){
-                
-                JOptionPane.showMessageDialog(null, "Sequencia reconhecida!");
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Sequencia não reconhecida!");
             }
 
+        } else if (jExercicio.getSelectedItem().equals("Exercício I")) {
+            AlternativaI exI = new AlternativaI();
+            boolean ret = exI.testarSentenca(jEntrada.getText());
+            if (ret) {
+                JOptionPane.showMessageDialog(null, "Sequencia reconhecida!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Sequencia não reconhecida!");
+            }
+
+        } else if (jExercicio.getSelectedItem().equals("Exercício J")) {
+            AlternativaJ exJ = new AlternativaJ();
+            boolean ret = exJ.testarSentenca(jEntrada.getText());
+            if (ret) {
+                JOptionPane.showMessageDialog(null, "Sequencia reconhecida!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Sequencia não reconhecida!");
+            }
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -246,12 +244,22 @@ public class automato extends javax.swing.JFrame {
                 jDescricao.setText("L2 = {W começa com 'a' e termina com 'b'}");
             } else if (it.equalsIgnoreCase("Exercício B")) {
                 jDescricao.setText("L2 = {W possui 'aaa' como subcadeia}");
-            } else if (it.equalsIgnoreCase("Exercício I")) {
-                jDescricao.setText("L2 = {W inicia-se com uma letra, possuindo a seguir qualquer combinação de letras e dígitos}");
+            } else if (it.equalsIgnoreCase("Exercício C")) {
+                jDescricao.setText("L2 = {W possui baba como prefixo e abab como sufixo}");
+            } else if (it.equalsIgnoreCase("Exercício D")) {
+                jDescricao.setText("L2 = {W possui no máximo uma ocorrência da cadeia baba}");
+            } else if (it.equalsIgnoreCase("Exercício E")) {
+                jDescricao.setText("L2 = {W não possui ocorrência da cadeia baba}");
+            } else if (it.equalsIgnoreCase("Exercício F")) {
+                jDescricao.setText("L2 = {W possui ocorrência par de a's seguida por ocorrência impar de b's}");
             } else if (it.equalsIgnoreCase("Exercício G")) {
                 jDescricao.setText("L2 = {W começa com a e possui ocorrência par de a's ou começa com b e possui ocorrência impar de b's}");
             } else if (it.equalsIgnoreCase("Exercício H")) {
                 jDescricao.setText("L2 = {W inicia-se com 0e a soma de todos os seus dígitosé par, ou inicia-se com 1e a soma de todos os seus dígitos é impar}");
+            } else if (it.equalsIgnoreCase("Exercício I")) {
+                jDescricao.setText("L2 = {W inicia-se com uma letra, possuindo a seguir qualquer combinação de letras e dígitos}");
+            } else if (it.equalsIgnoreCase("Exercício J")) {
+                jDescricao.setText("L2 = {W é um número inteiro, um número decimal ou um número representado em notação científica}");
             }
         }
     }//GEN-LAST:event_jExercicioItemStateChanged
@@ -261,8 +269,8 @@ public class automato extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            jDescricao.setText(""); 
-            jEntrada.setText("");
+
+        jEntrada.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
